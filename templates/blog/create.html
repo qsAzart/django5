@@ -1,0 +1,9 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+            <form action="{% url 'create' %}" method="POST">
+                {% csrf_token %}
+              {{form.as_p}}
+              <input type ='submit' value="save" class="btn-default">
+            </form>
+{% endblock %}
